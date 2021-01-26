@@ -6,6 +6,8 @@
 class CardRepository
 {
     private $databaseManager;
+ 
+ 
 
     // This class needs a database connection to function
     public function __construct(DatabaseManager $databaseManager)
@@ -15,7 +17,8 @@ class CardRepository
 
     public function create()
     {
-
+        
+        
     }
 
     // Get one
@@ -28,13 +31,27 @@ class CardRepository
     public function get()
     {
         // TODO: replace dummy data by real one
-        return [
-            ['name' => 'dummy one'],
-            ['name' => 'dummy two'],
-        ];
+        /*return [
+           // ['name' => 'Bulbasaur'],
+            ['name' => 'Ivysaur'],
+            ['name' => 'Venusaur.'],
+            ['name' => 'Charmander'],
+            ['name' => 'Charmeleon'],
+            ['name' => 'Charizard'],
+            ['name' => 'Squirtle'],
+            ['name' => 'Wartortle'],
+    
+        ];*/
 
         // We get the database connection first, so we can apply our queries with it
         // return $this->databaseManager->database-> (runYourQueryHere)
+        $stmt = $this->databaseManager->database->query("SELECT * FROM card");
+        while($row= $stmt->fetch(PDO::FETCH_ASSOC)){
+        echo $row['name'];
+        return $stmt;
+       
+        }
+        
     }
 
     public function update()
