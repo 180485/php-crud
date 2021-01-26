@@ -17,7 +17,20 @@ class CardRepository
 
     public function create()
     {
-        
+     
+        $name = $_POST["name"];
+        $description= $_POST["description"];
+     
+
+         //first create a sql 
+         $sql="INSERT INTO card( name, description) 
+         VALUES(?,?) ";
+ 
+        //prepare the statement
+      
+        $stmt = $this->databaseManager->database->prepare($sql);
+        $stmt->execute([$name, $description]);
+      
         
     }
 
@@ -32,7 +45,7 @@ class CardRepository
     {
         // TODO: replace dummy data by real one
         /*return [
-           // ['name' => 'Bulbasaur'],
+           ['name' => 'Bulbasaur'],
             ['name' => 'Ivysaur'],
             ['name' => 'Venusaur.'],
             ['name' => 'Charmander'],
@@ -46,11 +59,9 @@ class CardRepository
         // We get the database connection first, so we can apply our queries with it
         // return $this->databaseManager->database-> (runYourQueryHere)
         $stmt = $this->databaseManager->database->query("SELECT * FROM card");
-        while($row= $stmt->fetch(PDO::FETCH_ASSOC)){
-        echo $row['name'];
-        return $stmt;
-       
-        }
+         return $stmt;
+        
+
         
     }
 
@@ -61,7 +72,16 @@ class CardRepository
 
     public function delete()
     {
+        $sql = "DELETE FROM " . $this->dbname . " WHERE id = ?";
+            $stmt = $this->conn->prepare($sql);
+        
+            $this->id=htmlspecialchars(strip_tags($this->id));
+        
+            if($stmt->execute()){
+                return true;
+            }
+            return false;
+        }
 
     }
 
-}
