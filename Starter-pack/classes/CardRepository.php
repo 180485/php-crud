@@ -26,6 +26,7 @@ class CardRepository
       
         $stmt = $this->databaseManager->database->prepare($sql);
         $stmt->execute([$name, $description]);
+        header('Location: index.php');
        
         
     }
@@ -54,6 +55,18 @@ class CardRepository
 
         
     }
+
+    public function find($id)
+    {
+       
+        $stmt = $this->databaseManager->database->query("SELECT * FROM card WHERE id = $id");
+        return $stmt;
+        
+
+        
+    }
+
+
 
     public function update()
     {

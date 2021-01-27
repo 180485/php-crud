@@ -5,6 +5,7 @@ require 'setup.php';
 $databaseManager = new DatabaseManager($config['host'], $config['user'], $config['password']);
 $databaseManager->connect();
 $cardRepository = new CardRepository($databaseManager);
+$cards=$cardRepository->find($_GET['editId']);
 
  
 if(!empty($_POST["submit"])){
@@ -13,7 +14,7 @@ if(!empty($_POST["submit"])){
 }
 
 ?>
->
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -27,6 +28,13 @@ if(!empty($_POST["submit"])){
 	<title>Goodcard - track your collection of Pokémon cards</title>
 </head>
 <body>
+<?php foreach ($cards as $card) : ?>
+<tr>
+	<td><?=$card['id']?></td>
+     <td><?=$card['name']?></td>
+	<td><?=$card['description']?></td>
+ </tr>
+            <?php endforeach; ?>
 <div class="form">
     <form method="post">  
 	  Name: <input type="text" name="name">

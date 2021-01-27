@@ -5,6 +5,8 @@ require 'setup.php';
 $databaseManager = new DatabaseManager($config['host'], $config['user'], $config['password']);
 $databaseManager->connect();
 $cardRepository = new CardRepository($databaseManager);
+$cards=$cardRepository->find($_GET['deleteId']);
+
 
 if(!empty($_POST["delete"])){
     $deleteId=$_GET["deleteId"];
@@ -25,6 +27,13 @@ if(!empty($_POST["delete"])){
 	<title>Goodcard - track your collection of Pokémon cards</title>
 </head>
 <body>
+<?php foreach ($cards as $card) : ?>
+<tr>
+	<td><?=$card['id']?></td>
+     <td><?=$card['name']?></td>
+	<td><?=$card['description']?></td>
+ </tr>
+            <?php endforeach; ?>
 <div class="content delete">
 <form action="" method="post">
         delete this ?

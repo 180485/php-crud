@@ -51,7 +51,7 @@
 
 .cards tr:hover {background-color: #ddd;}
 
-#cards thead .th {
+thead  {
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
@@ -70,10 +70,10 @@
     <table class="cards">
         <thead>
             <tr>
-                <td>Id</td>
-                <td>Title</td>
-				<td>Description</td>
-                <td>Action</td>
+            <td>Id</td>
+            <td>Title</td>
+				    <td>Description</td>
+            <td>Action</td>
             </tr>
         </thead>
         <tbody>
