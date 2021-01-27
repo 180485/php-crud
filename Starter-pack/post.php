@@ -6,9 +6,6 @@ $databaseManager->connect();
 
 
 
-
-     
-
 if(!empty($_POST["submit"]) && !empty($_POST["name"])){
     $cardRepository->create();
     $cards=$cardRepository->get();
@@ -66,7 +63,8 @@ if(!empty($_POST["submit"]) && !empty($_POST["name"])){
 form{
   width: 500px;
   height: 400px;
-  margin-left:470px;
+  margin-left:430px;
+  margin-top:50px;
   
 }
 input[type=text], select {

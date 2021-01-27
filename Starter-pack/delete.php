@@ -4,14 +4,16 @@ require 'setup.php';
 
 $databaseManager = new DatabaseManager($config['host'], $config['user'], $config['password']);
 $databaseManager->connect();
+$cardRepository = new CardRepository($databaseManager);
 
-if(isset($_GET['deleteId']) && !empty($_GET['deleteId'])) {
-    $deleteId = $_GET['deleteId'];
-} else {
-    // User clicked the "No" button, redirect them back to the read page
-    header('Location: index.php');
-    exit;
+if(!empty($_POST["delete"])){
+    $deleteId=$_GET["deleteId"];
+    $cardRepository->delete($deleteId);
 }
+var_dump($_GET);
+echo "<br>";
+var_dump($_POST);
+
 ?>
 <!doctype html>
 <html lang="en">
@@ -76,13 +78,10 @@ if(isset($_GET['deleteId']) && !empty($_GET['deleteId'])) {
 }
 </style>
 <div class="content delete">
-	<h2>Delete Comics #<?= $deleteId ?></h2>
-	<p>Are you sure you want to delete ? #<?= $deleteId ?>?</p>
-    <div class="yesno">
-        <a href="index.php?id=<?=$deleteId?>&confirm=yes"  <?php echo " Comic is been deleted"; ?>>Yes</a>
-       
-        <a href="delete.php?id=<?=$deleteId?>&confirm=no">No</a>
-    </div>
+<form action="" method="post">
+        delete this ?
+        <button type="submit" name="delete" value="confirm">Confirm</button>
+    </form>
 </div>
 </body>
 </html>

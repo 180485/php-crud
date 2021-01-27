@@ -59,7 +59,7 @@ class CardRepository
         // We get the database connection first, so we can apply our queries with it
         // return $this->databaseManager->database-> (runYourQueryHere)
         $stmt = $this->databaseManager->database->query("SELECT * FROM card");
-         return $stmt;
+        return $stmt;
         
 
         
@@ -69,12 +69,15 @@ class CardRepository
     {
 
     }     
-    public function delete($id)
+    public function delete(int $deleteId)
     {
-        $sql= "DELETE FROM card WHERE id = '$id'";
-		$stmt = $this->databaseManager->database->prepare($sql);
-		
-           
+        $stmt = $this->databaseManager->database->prepare('DELETE FROM card WHERE id = ?');
+        $stmt->execute([$deleteId]);
+        header('Location: index.php');
+        
+        
 
     }
 } 
+
+

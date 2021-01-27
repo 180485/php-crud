@@ -86,7 +86,7 @@
      <a href="delete.php?editId=<?php echo $card['id'] ?>" style="color:green">
      <i class="fas fa-edit" aria-hidden="true"></i></a>
 
-    <a href="delete.php?deleteId=<?php echo $card['id'] ?>" style="color:red" onclick="confirm('Are you sure want to delete ??')">
+    <a href="delete.php?deleteId=<?php echo $card['id'] ?>" style="color:red">
      <i class="fa fa-trash" aria-hidden="true"></i></a>
     </td>
  </tr>
