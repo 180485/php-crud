@@ -6,7 +6,8 @@
 class CardRepository
 {
     private $databaseManager;
- 
+    
+    
  
 
     // This class needs a database connection to function
@@ -17,11 +18,9 @@ class CardRepository
 
     public function create()
     {
-     
         $name = $_POST["name"];
         $description= $_POST["description"];
-     
-
+        
          //first create a sql 
          $sql="INSERT INTO card( name, description) 
          VALUES(?,?) ";
@@ -30,6 +29,7 @@ class CardRepository
       
         $stmt = $this->databaseManager->database->prepare($sql);
         $stmt->execute([$name, $description]);
+       
       
         
     }
@@ -68,20 +68,13 @@ class CardRepository
     public function update()
     {
 
-    }
-
-    public function delete()
+    }     
+    public function delete($id)
     {
-        $sql = "DELETE FROM " . $this->dbname . " WHERE id = ?";
-            $stmt = $this->conn->prepare($sql);
-        
-            $this->id=htmlspecialchars(strip_tags($this->id));
-        
-            if($stmt->execute()){
-                return true;
-            }
-            return false;
-        }
+        $sql= "DELETE FROM card WHERE id = '$id'";
+		$stmt = $this->databaseManager->database->prepare($sql);
+		
+           
 
     }
-
+} 

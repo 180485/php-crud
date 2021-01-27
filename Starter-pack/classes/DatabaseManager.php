@@ -35,7 +35,7 @@ class DatabaseManager
             $conn = new PDO($dsn, $this->name, $this->password);
             $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
             $this->database =$conn;
-            echo "Connected successfully";
+          
        
            
         }catch (PDOExpeption $e){
