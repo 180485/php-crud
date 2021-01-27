@@ -83,7 +83,7 @@
         <td><?=$card['name']?></td>
 	<td><?=$card['description']?></td>
     <td class="actions">
-     <a href="delete.php?editId=<?php echo $card['id'] ?>" style="color:green">
+     <a href="update.php?editId=<?php echo $card['id'] ?>" style="color:green">
      <i class="fas fa-edit" aria-hidden="true"></i></a>
 
     <a href="delete.php?deleteId=<?php echo $card['id'] ?>" style="color:red">

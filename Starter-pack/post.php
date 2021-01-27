@@ -12,6 +12,8 @@ if(!empty($_POST["submit"]) && !empty($_POST["name"])){
     echo '<div class="alert alert-success" role="alert"> Your COMIC is Added ! </div>';
 }
 
+
+
 ?>
 <!doctype html>
 <html lang="en">

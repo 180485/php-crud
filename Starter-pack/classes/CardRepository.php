@@ -7,9 +7,6 @@ class CardRepository
 {
     private $databaseManager;
     
-    
- 
-
     // This class needs a database connection to function
     public function __construct(DatabaseManager $databaseManager)
     {
@@ -30,14 +27,7 @@ class CardRepository
         $stmt = $this->databaseManager->database->prepare($sql);
         $stmt->execute([$name, $description]);
        
-      
         
-    }
-
-    // Get one
-    public function find()
-    {
-
     }
 
     // Get all
@@ -67,8 +57,21 @@ class CardRepository
 
     public function update()
     {
+        $name = $_POST["name"];
+        $description= $_POST["description"];
+        $id=$_GET["editId"];
+        
+        $mysql= 'UPDATE card
+        SET name= ?,description = ?
+        WHERE id = ?';
+        
+        $stmt = $this->databaseManager->database->prepare($mysql);
+        $stmt->execute([$name,$description,$id]);
+        header('Location: index.php');
 
-    }     
+
+    }   
+
     public function delete(int $deleteId)
     {
         $stmt = $this->databaseManager->database->prepare('DELETE FROM card WHERE id = ?');

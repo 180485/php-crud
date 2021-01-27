@@ -10,9 +10,6 @@ if(!empty($_POST["delete"])){
     $deleteId=$_GET["deleteId"];
     $cardRepository->delete($deleteId);
 }
-var_dump($_GET);
-echo "<br>";
-var_dump($_POST);
 
 ?>
 <!doctype html>
@@ -28,55 +25,6 @@ var_dump($_POST);
 	<title>Goodcard - track your collection of Pokémon cards</title>
 </head>
 <body>
-<style>
-.update form {
-  	padding: 15px 0;
-  	display: flex;
-  	flex-flow: wrap;
-}
-.update form label {
-  	display: inline-flex;
-  	width: 400px;
-  	padding: 10px 0;
-  	margin-right: 25px;
-}
-.update form input {
-  	padding: 10px;
-  	width: 400px;
-  	margin-right: 25px;
-  	margin-bottom: 15px;
-  	border: 1px solid #cccccc;
-}
-.update form input[type="submit"] {
-  	display: block;
-  	background-color: #38b673;
-  	border: 0;
-  	font-weight: bold;
-  	font-size: 14px;
-  	color: #FFFFFF;
-  	cursor: pointer;
-  	width: 200px;
-	margin-top: 15px;
-}
-.update form input[type="submit"]:hover {
-  	background-color: #32a367;
-}
-.delete .yesno {
-  	display: flex;
-}
-.delete .yesno a {
-  	display: inline-block;
-  	text-decoration: none;
-  	background-color: #38b673;
-  	font-weight: bold;
-  	color: #FFFFFF;
-  	padding: 10px 15px;
-  	margin: 15px 10px 15px 0;
-}
-.delete .yesno a:hover {
-  	background-color: #32a367;
-}
-</style>
 <div class="content delete">
 <form action="" method="post">
         delete this ?
