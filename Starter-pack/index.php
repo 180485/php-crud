@@ -23,10 +23,6 @@ $cardRepository = new CardRepository($databaseManager);
 $cards = $cardRepository->get();
 
 
-echo "<b>POST</b><br>";
-echo "<pre>";
-var_dump($_POST);
-echo "</pre>";
 
 
 

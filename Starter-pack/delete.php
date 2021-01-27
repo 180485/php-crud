@@ -27,18 +27,60 @@ if(!empty($_POST["delete"])){
 	<title>Goodcard - track your collection of Pokémon cards</title>
 </head>
 <body>
+<style>
+
+.container{
+    width:100%;
+    margin:50px;
+    padding:50px;
+    
+
+}
+
+form{
+    margin:
+}
+
+
+.cards td, .cards th {
+
+border: 1px solid #ddd;
+padding: 8px;
+}
+
+
+
+thead  {
+padding-top: 12px;
+padding-bottom: 12px;
+text-align: left;
+background-color:#429991;
+color: white;
+}
+
+</style>
+<div class="container">
+    <table class="cards">
+        <thead>
+            <tr>
+            <td>Id</td>
+            <td>Title</td>
+			<td>Description</td>
+            </tr>
+        </thead>
+   <tbody>
 <?php foreach ($cards as $card) : ?>
 <tr>
 	<td><?=$card['id']?></td>
-     <td><?=$card['name']?></td>
-	<td><?=$card['description']?></td>
- </tr>
-            <?php endforeach; ?>
-<div class="content delete">
+      <td><?=$card['name']?></td>
+	    <td><?=$card['description']?></td>
+ </tr>  
+ <?php endforeach; ?>
+ 
 <form action="" method="post">
-        delete this ?
+        Sure wanna delete this ?
         <button type="submit" name="delete" value="confirm">Confirm</button>
-    </form>
+ </form>
 </div>
 </body>
 </html>

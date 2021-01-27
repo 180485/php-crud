@@ -12,8 +12,6 @@ if(!empty($_POST["submit"]) && !empty($_POST["name"])){
     echo '<div class="alert alert-success" role="alert"> Your COMIC is Added ! </div>';
 }
 
-
-
 ?>
 <!doctype html>
 <html lang="en">
@@ -24,16 +22,18 @@ if(!empty($_POST["submit"]) && !empty($_POST["name"])){
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" type="text/css"rel="stylesheet"/>
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
-     <link rel="stylesheet" href="Starter-pack/style.css">  
+     <link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Potta+One&display=swap" rel="stylesheet">
 	<title>Goodcard - track your collection of Pokémon cards</title>
 </head>
 <body>
 <style>
-      .navtop {
-  	background-color: #3f69a8;
+    .navtop {
+  	background-color:#429991;
   	height: 60px;
   	width: 100%;
   	border: 0;
+	font-family: 'Black Ops One', cursive;
 }
 .navtop div {
   	display: flex;
@@ -77,21 +77,29 @@ input[type=text], select {
   border: 1px solid #427F99;
   border-radius: 4px;
   box-sizing: border-box;
-  background-color: #9AD2EA;
+ 
 }
 
 input[type=submit] {
   width: 100%;
-  background-color: #0099CC;
+  background-color:#429991;
   padding: 14px 20px;
   margin: 8px 0;
   border: none;
   border-radius: 4px;
   cursor: pointer;
+  font-family: 'Black Ops One', cursive;
 }
 
 input[type=submit]:hover {
   background-color: #427F99;
+}
+
+label{
+	font-family: 'Black Ops One', cursive;
+	color:#429991;
+	width: 100%;
+
 }
 
 </style>
@@ -103,8 +111,8 @@ input[type=submit]:hover {
     </nav>
 <div class="form">
     <form method="post">  
-	  Name: <input type="text" name="name">
-	  description<input type="text" name="description">
+	  <label>Name : <input type="text" name="name"></label>
+	  <label>description :<input type="text" name="description"></label>
       <input type="submit" name="submit" value="Save">  
     <form>
 </div>

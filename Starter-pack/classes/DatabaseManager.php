@@ -16,20 +16,16 @@ class DatabaseManager
 
     public function __construct(string $host, string $name, string $password)
     {
-        // TODO: Set any user and password information
+    
         $this->host = $host;
         $this->name = $name;
         $this->password = $password;
-        
        
     }
 
-
     public function connect()
     {
-        // TODO: make the connection to the database
-  
-      
+       
         try{
             $dsn = "mysql:host=localhost;dbname=curd";
             $conn = new PDO($dsn, $this->name, $this->password);

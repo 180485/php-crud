@@ -34,39 +34,22 @@ class CardRepository
     // Get all
     public function get()
     {
-        // TODO: replace dummy data by real one
-        /*return [
-           ['name' => 'Bulbasaur'],
-            ['name' => 'Ivysaur'],
-            ['name' => 'Venusaur.'],
-            ['name' => 'Charmander'],
-            ['name' => 'Charmeleon'],
-            ['name' => 'Charizard'],
-            ['name' => 'Squirtle'],
-            ['name' => 'Wartortle'],
     
-        ];*/
-
         // We get the database connection first, so we can apply our queries with it
         // return $this->databaseManager->database-> (runYourQueryHere)
         $stmt = $this->databaseManager->database->query("SELECT * FROM card");
         return $stmt;
-        
-
+    
         
     }
 
     public function find($id)
     {
-       
         $stmt = $this->databaseManager->database->query("SELECT * FROM card WHERE id = $id");
         return $stmt;
-        
-
+    
         
     }
-
-
 
     public function update()
     {
@@ -82,9 +65,7 @@ class CardRepository
         $stmt->execute([$name,$description,$id]);
         header('Location: index.php');
 
-
     }   
-
     public function delete(int $deleteId)
     {
         $stmt = $this->databaseManager->database->prepare('DELETE FROM card WHERE id = ?');
