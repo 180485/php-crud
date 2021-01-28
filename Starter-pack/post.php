@@ -28,6 +28,12 @@ if(!empty($_POST["submit"]) && !empty($_POST["name"])){
 </head>
 <body>
 <style>
+body {
+    background-image:url("img/bg1.png");
+	background-repeat: no-repeat;
+
+    
+  }
     .navtop {
   	background-color:#429991;
   	height: 60px;
@@ -65,8 +71,8 @@ if(!empty($_POST["submit"]) && !empty($_POST["name"])){
 form{
   width: 500px;
   height: 400px;
-  margin-left:430px;
-  margin-top:50px;
+  margin-left:730px;
+  margin-top:40px;
   
 }
 input[type=text], select {
@@ -102,6 +108,14 @@ label{
 
 }
 
+h1{
+	font-family: 'Black Ops One', cursive;
+	color:#429991;
+	margin-left:730px;
+	margin-top:150px;
+
+}
+
 </style>
 <nav class="navtop">
     	<div>
@@ -110,6 +124,7 @@ label{
     	</div>
     </nav>
 <div class="form">
+<h1>Created Your Collection</h1>
     <form method="post">  
 	  <label>Name : <input type="text" name="name"></label>
 	  <label>description :<input type="text" name="description"></label>

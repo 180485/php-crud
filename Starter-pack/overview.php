@@ -10,10 +10,22 @@
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Potta+One&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
 	<title>Goodcard - track your collection of Pokémon cards</title>
 </head>
 <body>
 <style>
+  body {
+    background-image:url("img/bg5.png");
+    background-repeat: no-repeat;
+    font-family: 'Black Ops One', cursive;
+    background-position:center top;
+    background-attachment: fixed;
+  
+    
+  }
+
+
  .navtop {
   	height: 60px;
   	width: 100%;

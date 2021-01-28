@@ -25,15 +25,22 @@ if(!empty($_POST["submit"])){
 	<link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" type="text/css"rel="stylesheet"/>
      <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" integrity="sha384-vp86vTRFVJgpjF9jiIGPEEqYqlDwgyBgEF109VFjmqGmIY/Y4HV4d3Gp2irVfcrp" crossorigin="anonymous">
      <link href="https://fonts.googleapis.com/css2?family=Black+Ops+One&family=Potta+One&display=swap" rel="stylesheet">
+     <link rel="stylesheet" href="style.css">
 	<title>Goodcard - track your collection of Pokémon cards</title>
 </head>
 <body>
 <style>
+body {
+    background-image:url("img/bg2.png");
+    background-repeat: no-repeat;
+    
+  }
+
 .cards {
   font-family: 'Black Ops One', cursive;
   border-collapse: collapse;
-  width: 70%;
-  margin-left:170px;
+  width: 50%;
+  margin-left:570px;
 
 }
 
@@ -57,7 +64,7 @@ thead  {
 .form{
   width: 500px;
   height: 400px;
-  margin-left:430px;
+  margin-left:630px;
   
 }
 input[type=text], select {
@@ -92,7 +99,20 @@ label{
 	width: 100%;
 
 }
+
+
+h1{
+  margin-left: 640px;
+  margin-top:40px;
+  	font-size: 40px;
+  	color: #429991;
+	font-family: 'Black Ops One', cursive;
+}
+
 </style>
+    	<h1>Update Your Collection</h1>
+    </nav>
+<div class="main">
     <table class="cards">
         <thead>
             <tr>
@@ -105,17 +125,18 @@ label{
 <?php foreach ($cards as $card) : ?>
 <tr>
 	<td><?=$card['id']?></td>
-    <td><?=$card['name']?></td>
+   <td><?=$card['name']?></td>
 	<td><?=$card['description']?></td>
-    
- </tr>
- <?php endforeach; ?>
-<div class="form">
+  <div class="form">
     <form method="post">  
 	  <label>Name : <input type="text" name="name"></label>
 	  <label>description :<input type="text" name="description"></label>
       <input type="submit" name="submit" value="Update">  
     <form>
+  </div>
 </div>
+    
+ </tr>
+ <?php endforeach; ?>
 </body>
 </html>
